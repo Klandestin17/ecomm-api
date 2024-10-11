@@ -14,7 +14,10 @@ SECRET_KEY = 'django-insecure-&d=uqf-zi282idv+1^^55*q%h$_zy-fs55z&!y!lmthot(bd%@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.10.81',
+    '127.0.0.1'
+]
 
 
 # Application definition
@@ -29,6 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'djoser',
     'rest_framework',
+    'rest_framework.authtoken',
+    'core',
 ]
 
 MIDDLEWARE = [
@@ -115,12 +120,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
-    # title of the window (Will default to current_admin_site.site_title if absent or None)
     "site_title": "Ecommerce Admin",
-
-    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_header": "Ecommerce Admin",
-
-    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_brand": "Ecommerce Admin",
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
 }
