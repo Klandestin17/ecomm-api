@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from core import views
 
 urlpatterns = [
@@ -6,7 +6,7 @@ urlpatterns = [
     path('categories/home/', views.HomeCategoryList.as_view(),
          name='home-category-list'),
 
-    path('', views.CategoryList.as_view(), name='category-list'),
+    path('', views.ProductList.as_view(), name='product-list'),
     path('popular/', views.PopularProductList.as_view(), name='popular-list'),
     path('bytype/', views.ProductListByClothesType.as_view(), name='list-by-type'),
 
