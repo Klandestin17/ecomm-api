@@ -1,2 +1,10 @@
 env/
 db.sqlite3
+*.pyc
+__pycache__/
+*.egg-info/
+tmp/
+*cache*
+*.pyd
+logs/
+.cache/
